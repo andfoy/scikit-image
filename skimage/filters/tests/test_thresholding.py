@@ -774,6 +774,7 @@ def test_multiotsu_output():
     assert np.array_equal(thresholds, threshold_multiotsu(image, classes=4))
 
 
+@pytest.mark.thread_unsafe
 def test_multiotsu_astro_image():
     img = util.img_as_ubyte(data.astronaut())
     with expected_warnings(['grayscale']):
