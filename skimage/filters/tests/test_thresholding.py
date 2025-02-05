@@ -324,6 +324,7 @@ def test_otsu_coins_image_as_float():
     assert 0.41 < threshold_otsu(coins) < 0.42
 
 
+@pytest.mark.thread_unsafe
 def test_otsu_astro_image():
     img = util.img_as_ubyte(data.astronaut())
     with expected_warnings(['grayscale']):
